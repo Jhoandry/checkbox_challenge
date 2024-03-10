@@ -1,10 +1,43 @@
 body {
-  Display: grid; 
-  Justify-content: center; 
-  Align-items: center; 
+  display: grid; 
+  place-content: center;
   margin-top: 10%;
 } 
 
 h1   {
   color: #4050FF;
+}
+
+.styled-checkbox {
+  padding: .5em;
+  border-radius: .3em;
+  width: auto;
+  height: auto;
+}
+
+input[id=styled] {
+  display: none;
+  pointer-events: none;
+  & + label {
+    cursor: pointer;
+    svg {
+      width: 1em;
+      border: 1px solid black;
+      border-radius: 10%;
+
+      .check {
+        display: none;
+      }
+    }
+  }
+
+  &:checked + label {
+    .box {
+      fill: black;
+    }
+    .check {
+      display: grid;
+      color: white;
+    }
+  }
 }

@@ -12,8 +12,26 @@
     </script>
     <h1>Checkbox Challenge</h1>
     <div>
+      <!-- Basic checkbox -->
       <input type="checkbox" id="basic" name="basic" onchange="onchangeCheckbox(this)">
-      <input type="checkbox" id="styled" name="styled" onchange="onchangeCheckbox(this)">
+      <!-- Custom checkbox -->    
+      <div class="styled-checkbox">
+        <input type="checkbox" id="styled" name="styled" onchange="onchangeCheckbox(this)">
+        <label for="styled">
+          <svg viewBox="0 0 256 256">
+            <rect class="box" width="256" height="256" fill="none"></rect>
+            <polyline
+              class="check"
+              points="216 72.005 104 184 48 128.005"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="16">
+            </polyline>
+          </svg>
+        </label>
+      </div>
     </div>
   </body>
 </html>
