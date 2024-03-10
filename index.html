@@ -5,20 +5,31 @@
   </head>
   <body>
     <script>
-      function onchangeCheckbox(element) {
+      function onchangeAction(element) {
         document.getElementById("basic").checked = element.checked;
         document.getElementById("styled").checked = element.checked;
+      }
+
+      function focusAction(focus) {
+        if (focus) {
+          document.getElementById("svg-checkbox").classList.add('focus');
+        } else {
+          document.getElementById("svg-checkbox").classList.remove('focus');
+        }
       }
     </script>
     <h1>Checkbox Challenge</h1>
     <div>
       <!-- Basic checkbox -->
-      <input type="checkbox" id="basic" name="basic" onchange="onchangeCheckbox(this)">
+      <input  type="checkbox" 
+              id="basic" onchange="onchangeAction(this)" 
+              onfocus="focusAction(true)" 
+              onBlur="focusAction(false)">
       <!-- Custom checkbox -->    
       <div class="styled-checkbox">
-        <input type="checkbox" id="styled" name="styled" onchange="onchangeCheckbox(this)">
+        <input type="checkbox" id="styled" onchange="onchangeAction(this)">
         <label for="styled">
-          <svg viewBox="0 0 256 256">
+          <svg id="svg-checkbox" viewBox="0 0 256 256" focusable="true">
             <rect class="box" width="256" height="256" fill="none"></rect>
             <polyline
               class="check"

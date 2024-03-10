@@ -18,6 +18,7 @@ h1   {
 input[id=styled] {
   display: none;
   pointer-events: none;
+  
   & + label {
     cursor: pointer;
     svg {
@@ -40,4 +41,9 @@ input[id=styled] {
       color: white;
     }
   }
+}
+
+.focus {
+  outline-offset: 2px;
+  outline: blue solid 2px;
 }
