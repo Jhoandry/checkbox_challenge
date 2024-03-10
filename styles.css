@@ -1,0 +1,10 @@
+body {
+  Display: grid; 
+  Justify-content: center; 
+  Align-items: center; 
+  margin-top: 10%;
+} 
+
+h1   {
+  color: #4050FF;
+}
