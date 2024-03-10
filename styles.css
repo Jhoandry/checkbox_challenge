@@ -9,30 +9,28 @@ h1   {
 }
 
 .styled-checkbox {
-  padding: .5em;
+  padding: 3px;
   border-radius: .3em;
+  margin-top: .3em;
   width: auto;
   height: auto;
 }
 
 input[id=styled] {
-  display: none;
-  pointer-events: none;
+  position: absolute;
+  opacity: 0;
   
-  & + label {
+  & + svg {
     cursor: pointer;
-    svg {
-      width: 1em;
-      border: 1px solid black;
-      border-radius: 10%;
-
-      .check {
-        display: none;
-      }
+    width: 1em;
+    border: 1px solid black;
+    border-radius: 10%;
+    .check {
+      display: none;
     }
   }
 
-  &:checked + label {
+  &:checked + svg {
     .box {
       fill: black;
     }

@@ -10,38 +10,40 @@
         document.getElementById("styled").checked = element.checked;
       }
 
-      function focusAction(focus) {
-        if (focus) {
-          document.getElementById("svg-checkbox").classList.add('focus');
+      function handleCheckboxFocus(elementId, focus = false) {
+        var element = document.getElementById(elementId);
+        if (elementId === "svg-checkbox") {
+          focus? element.classList.add("focus") : element.classList.remove("focus");
         } else {
-          document.getElementById("svg-checkbox").classList.remove('focus');
+          focus? element.focus() : element.blur();
         }
       }
     </script>
     <h1>Checkbox Challenge</h1>
     <div>
       <!-- Basic checkbox -->
-      <input  type="checkbox" 
-              id="basic" onchange="onchangeAction(this)" 
-              onfocus="focusAction(true)" 
-              onBlur="focusAction(false)">
+      <input  type="checkbox" id="basic" 
+              onchange="onchangeAction(this)" 
+              onfocus="handleCheckboxFocus('svg-checkbox', true)" 
+              onblur="handleCheckboxFocus('svg-checkbox')">
       <!-- Custom checkbox -->    
       <div class="styled-checkbox">
-        <input type="checkbox" id="styled" onchange="onchangeAction(this)">
-        <label for="styled">
-          <svg id="svg-checkbox" viewBox="0 0 256 256" focusable="true">
-            <rect class="box" width="256" height="256" fill="none"></rect>
-            <polyline
-              class="check"
-              points="216 72.005 104 184 48 128.005"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16">
-            </polyline>
-          </svg>
-        </label>
+        <input  type="checkbox" id="styled" 
+                onchange="onchangeAction(this)" 
+                onfocus="handleCheckboxFocus('basic', true)"
+                onblur="handleCheckboxFocus('basic')">
+        <svg id="svg-checkbox" viewBox="0 0 256 256">
+          <rect class="box" width="256" height="256" fill="none"></rect>
+          <polyline
+            class="check"
+            points="216 72.005 104 184 48 128.005"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16">
+          </polyline>
+        </svg>
       </div>
     </div>
   </body>
