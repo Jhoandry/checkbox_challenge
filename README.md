@@ -13,4 +13,4 @@ This project is a styled checkbox that preserves the accessibility of a native c
 
 ## Run locally
 
-* Copy `index.html` path file  and open on your browser. Just that simple :smiley:! 
+* Copy `index.html` path file  and open on your browser. Just that simple :smiley:
